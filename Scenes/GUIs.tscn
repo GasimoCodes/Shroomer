@@ -1,10 +1,21 @@
-[gd_scene format=3 uid="uid://fu8irs4osi5y"]
+[gd_scene load_steps=3 format=3 uid="uid://fu8irs4osi5y"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/StatsListener.cs" id="1_ypgdc"]
+[ext_resource type="Script" path="res://Scripts/PlayerStats.cs" id="2_d4j71"]
 
 [node name="GUIs" type="Node"]
 
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("2_d4j71")
+
 [node name="GUI_HUD" type="CanvasGroup" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="GUI_HUD"]
+[node name="CanvasLayer" type="CanvasLayer" parent="GUI_HUD" node_paths=PackedStringArray("energyLabel", "WaterLabel", "HumidityLabel", "HumidityBar")]
+script = ExtResource("1_ypgdc")
+energyLabel = NodePath("HBoxContainer/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer/Energy")
+WaterLabel = NodePath("HBoxContainer/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer/Water")
+HumidityLabel = NodePath("HBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/Control/Humidity")
+HumidityBar = NodePath("HBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/Control/ProgressBar")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GUI_HUD/CanvasLayer"]
 anchors_preset = 12
@@ -70,3 +81,4 @@ layout_mode = 2
 offset_right = 200.0
 offset_bottom = 27.0
 value = 90.96
+show_percentage = false

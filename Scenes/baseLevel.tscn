@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw02durl55ha5"]
+[gd_scene load_steps=7 format=3 uid="uid://dw02durl55ha5"]
 
 [ext_resource type="PackedScene" uid="uid://fu8irs4osi5y" path="res://Scenes/GUIs.tscn" id="1_g8p5h"]
 [ext_resource type="Script" path="res://Scripts/GUI/CameraDrag.cs" id="5_6ufgd"]
 [ext_resource type="Texture2D" uid="uid://bhfpo1hel70h3" path="res://Art/Textures/GUI/icon.svg" id="5_ccafm"]
 [ext_resource type="PackedScene" uid="uid://dvot0ojdexwnn" path="res://Scenes/tile_map.tscn" id="5_tm2c2"]
+[ext_resource type="Script" path="res://Scripts/Map/ShroomNetwork.cs" id="6_qh5g0"]
 [ext_resource type="Script" path="res://Scripts/Map/MapBuilder.cs" id="8_x5ia4"]
 
 [node name="Node2D" type="Node2D"]
@@ -26,6 +27,9 @@ offset = Vector2(0.275, -64.295)
 
 [node name="Managers" type="Node" parent="."]
 
-[node name="Node" type="Node" parent="Managers" node_paths=PackedStringArray("camera")]
+[node name="MapBuilder" type="Node" parent="Managers" node_paths=PackedStringArray("camera")]
 script = ExtResource("8_x5ia4")
 camera = NodePath("../../Camera2D")
+
+[node name="ShroomNet" type="Node" parent="Managers"]
+script = ExtResource("6_qh5g0")

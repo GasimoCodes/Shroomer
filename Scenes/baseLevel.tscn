@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw02durl55ha5"]
+
+[sub_resource type="TileSet" id="TileSet_pe7e0"]
+tile_shape = 1
+tile_size = Vector2i(256, 128)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(200.792, 133.731)
+tile_set = SubResource("TileSet_pe7e0")
+format = 2
+layer_0/y_sort_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="GUIs" type="Node" parent="."]
+
+[node name="GUI_HUD" type="CanvasGroup" parent="GUIs"]
+
+[node name="Control" type="Control" parent="GUIs/GUI_HUD"]
+custom_minimum_size = Vector2(6.34, 5.535)
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="GUIs/GUI_HUD/Control"]
+offset_left = -557.0
+offset_top = -375.465
+offset_right = -428.0
+offset_bottom = -335.465
+
+[node name="MenuBar" type="MenuBar" parent="GUIs/GUI_HUD/Control"]
+offset_top = -642.465
+offset_bottom = -642.465

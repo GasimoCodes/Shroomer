@@ -67,8 +67,6 @@ layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(-196611, 5, 0, 393216, 5, 0, -131070, 5, 0, -131073, 5, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 script = ExtResource("5_6ufgd")
 
 [node name="GUIs" parent="." instance=ExtResource("1_g8p5h")]

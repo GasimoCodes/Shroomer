@@ -8,10 +8,6 @@ public partial class CameraDrag : Node2D
 	bool btnPressed = false;
 	Vector2 mouseDelta = new Vector2();
 
-	public override void _Ready()
-	{
-
-	}
 
 	public override void _Input(InputEvent @event)
 	{
@@ -23,7 +19,7 @@ public partial class CameraDrag : Node2D
 		{
 			btnPressed = false;
 		}
-		
+
 		if (@event is InputEventMouseMotion mouseMotion)
 		{
 			if (btnPressed)
@@ -33,6 +29,7 @@ public partial class CameraDrag : Node2D
 			}
 		}
 	}
+
 
 
 }

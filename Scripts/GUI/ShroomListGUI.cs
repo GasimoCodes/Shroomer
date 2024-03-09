@@ -32,31 +32,43 @@ public partial class ShroomListGUI : Node
 	public void ShowAndUpdateContainer()
 	{
 		// Remove any previous buttons (since we are going to populate the list again)
-		// --
+		
+		foreach (Node child in Container.GetChildren())
+    {
+		// Remove previous buttons
+        child.QueueFree(); 
+    }
 
-        // Populate shrooms list, someone watch some UI tutorial on how to populate a grid with items
+
+		// Populate shrooms list, someone watch some UI tutorial on how to populate a grid with items
 
 		foreach (ShroomBase shroom in Shrooms)
 		{
 			// Create a new button btn in the grid
 
+		 // Create a new button for each shroom
+        Button btn = new Button();
+		btn.Text = "shroom Button";
+     //   btn.Text = shroom.name; // Set button text to shroom name
+        Container.AddChild(btn); // Add button to the container
+
 			// Get the water cost from shroom (you show it on the button)
 			int waterCost = shroom.WaterCost;
 
-			if(waterCost > PlayerStats.Instance.Water.Value)
+			if (waterCost > PlayerStats.Instance.Water.Value)
 			{
-                // Disable button (Godot has a builtin bool for that afaik)
-            }
-            
+				// Disable button (Godot has a builtin bool for that afaik)
+			}
+
 			// Register OnClick event
 			// (aka btn.OnClick => {MapBuilder.EnableBuildMode(shroom)})
 		}
-		 
+
 
 		// Show container
 		Container.Visible = true;
 
-    }
+	}
 
 
 

@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 
 
-public abstract partial class ShroomBase : Node, IDamageable, IBuildable
+public abstract partial class ShroomBase : Node2D, IDamageable, IBuildable
 {
 
 	public List<ShroomBase> neighbours;
 	public int Health;
 	public int MaxHealth;
-
+	// Used as icon
+	public abstract Texture2D icon{ get; }
 
 
     // Called when the node enters the scene tree for the first time.

@@ -15,19 +15,15 @@ public partial class PlayerStats : NodeSingleton<PlayerStats>
 	public override void _Ready()
 	{
 		base._Ready();
-
-
 	}
 
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
-
-
 	}
 
 
-
+	
 
 }
 

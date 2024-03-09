@@ -89,6 +89,7 @@ value = 90.96
 show_percentage = false
 
 [node name="SkillTree" type="CanvasLayer" parent="GUI_HUD"]
+visible = false
 
 [node name="Panel" type="Panel" parent="GUI_HUD/SkillTree"]
 anchors_preset = 15

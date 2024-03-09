@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Shroomer"
+run/main_scene="res://Scenes/baseLevel.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Art/Textures/GUI/icon.svg"
 
 [dotnet]
 

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://fu8irs4osi5y"]
+
+[node name="GUIs" type="Node"]
+
+[node name="GUI_HUD" type="CanvasGroup" parent="."]
+
+[node name="Control" type="Control" parent="GUI_HUD"]
+custom_minimum_size = Vector2(6.34, 5.535)
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="GUI_HUD/Control"]
+layout_mode = 0
+offset_left = -557.0
+offset_top = -375.465
+offset_right = -428.0
+offset_bottom = -335.465
+
+[node name="MenuBar" type="MenuBar" parent="GUI_HUD/Control"]
+layout_mode = 0
+offset_top = -642.465
+offset_bottom = -642.465

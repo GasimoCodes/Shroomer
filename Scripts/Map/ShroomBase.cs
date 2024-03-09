@@ -8,22 +8,38 @@ using System.Collections.Generic;
 /// </summary>
 public abstract partial class ShroomBase : Resource, IDamageable, IBuildable
 {
-	/// <summary>
-	/// Caching neighbours for performance
-	/// </summary>
-	public List<ShroomBase> neighbours;
+
+
+	[Export]
 	public int Health;
+	[Export]
 	public int MaxHealth;
-	
+
+	[Export]
+	public int WaterCost;
+   
 	/// <summary>
 	/// Resource ID of icon preview
 	/// </summary>
-	public abstract Texture2D icon{ get; }
+	[Export]
+	public Texture2D icon;
 	
 	/// <summary>
 	/// Reference to location in tilemap
 	/// </summary>
 	public Vector2 TileMapPosition;
+
+    /// <summary>
+    /// Caching neighbours for performance
+    /// </summary>
+    public List<ShroomBase> neighbours;
+
+
+    public ShroomBase()
+    {
+    }
+
+
 
     public virtual void DoDamage(int damage)
     {

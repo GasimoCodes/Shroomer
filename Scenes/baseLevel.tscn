@@ -5,8 +5,10 @@ tile_shape = 1
 tile_size = Vector2i(256, 128)
 
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 position = Vector2(200.792, 133.731)
 tile_set = SubResource("TileSet_pe7e0")
 format = 2
@@ -31,11 +33,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="GUIs/GUI_HUD/Control"]
+layout_mode = 0
 offset_left = -557.0
 offset_top = -375.465
 offset_right = -428.0
 offset_bottom = -335.465
 
 [node name="MenuBar" type="MenuBar" parent="GUIs/GUI_HUD/Control"]
+layout_mode = 0
 offset_top = -642.465
 offset_bottom = -642.465

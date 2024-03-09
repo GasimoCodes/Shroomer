@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ShroomGen" load_steps=2 format=3 uid="uid://it735pqlqobq"]
+
+[ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomGen.cs" id="1_vr2rn"]
+
+[resource]
+script = ExtResource("1_vr2rn")
+Health = 0
+MaxHealth = 0

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://fu8irs4osi5y"]
+[gd_scene load_steps=8 format=3 uid="uid://fu8irs4osi5y"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/StatsListener.cs" id="1_ypgdc"]
 [ext_resource type="Script" path="res://Scripts/PlayerStats.cs" id="2_d4j71"]
 [ext_resource type="Texture2D" uid="uid://dt5r5rxng61hs" path="res://Art/Textures/TileSetGround/ground 2.png" id="3_dhf0m"]
+[ext_resource type="Script" path="res://Scripts/GUI/ShroomListGUI.cs" id="4_etfe5"]
+[ext_resource type="Resource" uid="uid://it735pqlqobq" path="res://Data/ShroomDefs/ShroomGen1.tres" id="5_wosaw"]
 
 [sub_resource type="Theme" id="Theme_r8wvn"]
 
@@ -121,6 +123,9 @@ expand_mode = 1
 layout_mode = 2
 
 [node name="ShroomList" type="CanvasLayer" parent="GUI_HUD"]
+script = ExtResource("4_etfe5")
+Container = NodePath("")
+Shrooms = Array[Resource]([ExtResource("5_wosaw")])
 
 [node name="Panel" type="Panel" parent="GUI_HUD/ShroomList"]
 anchors_preset = 15

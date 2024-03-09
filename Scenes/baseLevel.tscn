@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dw02durl55ha5"]
+[gd_scene load_steps=13 format=3 uid="uid://dw02durl55ha5"]
 
 [ext_resource type="PackedScene" uid="uid://fu8irs4osi5y" path="res://Scenes/GUIs.tscn" id="1_g8p5h"]
 [ext_resource type="Texture2D" uid="uid://kinmgud532hi" path="res://Art/Textures/TileSetGround/tile ground.png" id="1_siqvb"]
 [ext_resource type="Texture2D" uid="uid://dkeikst628h3h" path="res://Art/Textures/TileSetGround/tile.png" id="2_on2dp"]
 [ext_resource type="Texture2D" uid="uid://dt5r5rxng61hs" path="res://Art/Textures/TileSetGround/ground 2.png" id="3_gw7v1"]
 [ext_resource type="Texture2D" uid="uid://6f5gahvgej8r" path="res://Art/Textures/TileSetGround/shroom tile.png" id="4_tvsmh"]
+[ext_resource type="Script" path="res://Scripts/GUI/CameraDrag.cs" id="5_6ufgd"]
 [ext_resource type="Texture2D" uid="uid://bhfpo1hel70h3" path="res://Art/Textures/GUI/icon.svg" id="5_ccafm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nptvm"]
@@ -68,6 +69,7 @@ layer_1/tile_data = PackedInt32Array(-196611, 5, 0, 393216, 5, 0, -131070, 5, 0,
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("5_6ufgd")
 
 [node name="GUIs" parent="." instance=ExtResource("1_g8p5h")]
 

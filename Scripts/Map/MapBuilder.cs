@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Godot;
 public partial class MapBuilder : Node
 {
@@ -22,6 +23,7 @@ public partial class MapBuilder : Node
             Texture = shroomBase.icon,
             Modulate = new Color(1, 1, 1, 0.5f)
         };
+
 		AddChild(previewSpawner);
     }
 
@@ -31,8 +33,6 @@ public partial class MapBuilder : Node
 		// Remove the preview
 		previewSpawner.QueueFree();
 		previewSpawner = null;
-		buildShroom = null;
-		previewSpawner.QueueFree();
 	}
 
 
@@ -45,15 +45,12 @@ public partial class MapBuilder : Node
 			// Translate 2D mouse position to world position			
 			
 			
-
 			if (@event is InputEventMouseMotion mouseMotion)
 			{
 				Vector2 mousePos = mouseMotion.GlobalPosition;
 				previewSpawner.Position = mousePos;
+				Debug.WriteLine(previewSpawner.Position	);
 			}
-			
-			
-
 		}
 
 

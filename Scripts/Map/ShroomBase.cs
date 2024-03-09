@@ -50,6 +50,13 @@ public abstract partial class ShroomBase : Node2D, IDamageable, IBuildable
         
     }
 
+	/// <summary>
+	/// Passive action of the shroom
+	/// </summary>
+	public virtual void DoTick(){
+		
+	}
+
     public virtual void OnDestroy()
     {
         QueueFree();

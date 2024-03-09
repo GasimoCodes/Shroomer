@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// <summary>
 /// This is the evidence for ALL shrooms in the game. 
 /// </summary>
-public partial class ShroomNetwork : Node
+public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 {
 	/// <summary>
 	/// List of shrooms on the map

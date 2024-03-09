@@ -38,6 +38,17 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="GridContainer" type="GridContainer" parent="GUI_HUD/HUD/HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GUI_HUD/HUD/HBoxContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Shroom Menu"
+
+[node name="Button2" type="Button" parent="GUI_HUD/HUD/HBoxContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+text = "SkillShroom"
+
 [node name="PanelContainer2" type="PanelContainer" parent="GUI_HUD/HUD/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -91,6 +102,7 @@ value = 90.96
 show_percentage = false
 
 [node name="SkillTree" type="CanvasLayer" parent="GUI_HUD"]
+visible = false
 
 [node name="Panel" type="Panel" parent="GUI_HUD/SkillTree"]
 anchors_preset = 15
@@ -122,9 +134,9 @@ expand_mode = 1
 [node name="HScrollBar" type="HScrollBar" parent="GUI_HUD/SkillTree/Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="ShroomList" type="CanvasLayer" parent="GUI_HUD"]
+[node name="ShroomList" type="CanvasLayer" parent="GUI_HUD" node_paths=PackedStringArray("Container")]
 script = ExtResource("4_etfe5")
-Container = NodePath("")
+Container = NodePath("Panel/VBoxContainer")
 Shrooms = Array[Resource]([ExtResource("5_wosaw")])
 
 [node name="Panel" type="Panel" parent="GUI_HUD/ShroomList"]
@@ -147,3 +159,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_w6e4h")
+
+[node name="Button" type="Button" parent="GUI_HUD/ShroomList/Panel/VBoxContainer"]
+layout_mode = 2
+text = "aaaaaaaaaaaaaaaaaa"
+
+[node name="Button2" type="Button" parent="GUI_HUD/ShroomList/Panel/VBoxContainer"]
+layout_mode = 2
+text = "aaaaaaaaaaaaaaaaaa"
+
+[connection signal="pressed" from="GUI_HUD/HUD/HBoxContainer/PanelContainer/GridContainer/Button2" to="GUI_HUD/ShroomList" method="ShowAndUpdateContainer"]

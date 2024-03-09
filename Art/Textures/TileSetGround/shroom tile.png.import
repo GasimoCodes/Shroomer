@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0414kr1ntxli"
-path="res://.godot/imported/shroom tile.png-e17b0196b66a6f52092eb8ee14038165.ctex"
+uid="uid://6f5gahvgej8r"
+path="res://.godot/imported/shroom tile.png-1d1097a18af5b39797b61c2d2dc116b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shroom tile.png"
-dest_files=["res://.godot/imported/shroom tile.png-e17b0196b66a6f52092eb8ee14038165.ctex"]
+source_file="res://Art/Textures/TileSetGround/shroom tile.png"
+dest_files=["res://.godot/imported/shroom tile.png-1d1097a18af5b39797b61c2d2dc116b0.ctex"]
 
 [params]
 

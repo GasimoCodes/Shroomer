@@ -12,11 +12,15 @@ public abstract partial class ShroomBase : Resource, IDamageable, IBuildable
 
 	[Export]
 	public int Health;
+	
 	[Export]
 	public int MaxHealth;
 
 	[Export]
 	public int WaterCost;
+
+	[Export]
+	public string ShroomName;
    
 	/// <summary>
 	/// Resource ID of icon preview

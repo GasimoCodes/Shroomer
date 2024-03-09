@@ -12,6 +12,7 @@ public abstract partial class ShroomBase : Node2D, IDamageable, IBuildable
 	public int MaxHealth;
 	// Used as icon
 	public abstract Texture2D icon{ get; }
+	public Sprite2D instance;
 
 
     // Called when the node enters the scene tree for the first time.

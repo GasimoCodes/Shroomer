@@ -1,10 +1,11 @@
 using Godot;
 public partial class MapBuilder : Node
 {
-	public ShroomBase baseShroom;
+	
 	public TileSet tileSet;
 
 	ShroomBase buildShroom = null;
+	Sprite2D previewSpawner;
 
 
     public override void _Ready()
@@ -13,15 +14,25 @@ public partial class MapBuilder : Node
     }
 
 
-    public void EnableBuildMode(ShroomBase shroomModel)
+    public void EnableBuildMode(ShroomBase shroomBase)
 	{
-		buildShroom = shroomModel.Duplicate() as ShroomBase;
-	}
+        // Create new Sprite2D for the preview
+        previewSpawner = new Sprite2D
+        {
+            Texture = shroomBase.icon,
+            Modulate = new Color(1, 1, 1, 0.5f)
+        };
+		AddChild(previewSpawner);
+    }
 
 
 	public void DisableBuildMode()
 	{
+		// Remove the preview
+		previewSpawner.QueueFree();
+		previewSpawner = null;
 		buildShroom = null;
+		previewSpawner.QueueFree();
 	}
 
 
@@ -29,19 +40,19 @@ public partial class MapBuilder : Node
 	{
 
 		// If build mode on
-		if (buildShroom != null)
+		if (previewSpawner != null)
 		{
 			// Translate 2D mouse position to world position			
 			
-			Vector2 mousePos = Vector2.Zero;
+			
 
 			if (@event is InputEventMouseMotion mouseMotion)
 			{
-				mousePos = mouseMotion.GlobalPosition;
+				Vector2 mousePos = mouseMotion.GlobalPosition;
+				previewSpawner.Position = mousePos;
 			}
 			
-			// Render preview of the shroom, snapping to the tileset.
-			buildShroom.Position = mousePos;
+			
 
 		}
 

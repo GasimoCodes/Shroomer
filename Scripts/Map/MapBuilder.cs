@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using Godot;
 
@@ -6,14 +7,16 @@ using Godot;
 /// </summary>
 public partial class MapBuilder : Node
 {
-
-	public TileSet tileSet;
+	[Export]
+	public TileMap tileMap;
 
 	ShroomBase buildShroom = null;
 	Sprite2D previewSpawner;
 
 	[Export]
 	Camera2D camera;
+
+	ShroomNetwork shroomNetwork;
 
 
 	public override void _Ready()
@@ -31,8 +34,11 @@ public partial class MapBuilder : Node
 		previewSpawner = new Sprite2D
 		{
 			Texture = shroomBase.icon,
-			Modulate = new Color(1, 1, 1, 0.5f)
+			Modulate = new Color(1, 1, 1, 0.5f),
+			ZIndex = 1
 		};
+
+		buildShroom = (ShroomBase)shroomBase.Duplicate();
 
 		AddChild(previewSpawner);
 	}
@@ -51,15 +57,39 @@ public partial class MapBuilder : Node
 		// If build mode on
 		if (previewSpawner != null)
 		{
-			// Translate 2D mouse position to world position			
+			shroomNetwork = ShroomNetwork.Instance;
+			// Translate 2D mouse position to world position
+
+			Vector2 mousePos = GetViewport().GetMousePosition();
+			Vector2 cameraPos = camera.Position;
+
+			Vector2 local = mousePos + cameraPos - GetViewport().GetVisibleRect().Size / 2;
+
+			Vector2I tilePos = tileMap.LocalToMap(local);
+			tilePos.X -= 1;
+			tilePos.Y -= 2;
+
+			previewSpawner.Position = local;
 
 
-			if (@event is InputEventMouseMotion mouseMotion)
+			if (!shroomNetwork.CanBePlaced(tilePos, buildShroom))
 			{
-				Vector2 mousePos = mouseMotion.Position;
-				Vector2 cameraPos = camera.Position;
+				previewSpawner.Modulate = new Color(0.5f, 0, 0, 0.5f);
+			}
+			else
+			{
+				previewSpawner.Modulate = new Color(1f, 1f, 1f, 0.5f);
+			}
 
-				previewSpawner.Position = mousePos + cameraPos - GetViewport().GetVisibleRect().Size / 2;
+
+			if (@event is InputEventMouse mouseButton)
+			{
+				if (mouseButton.ButtonMask == MouseButtonMask.Left)
+				{
+					buildShroom.TileMapPosition = tilePos;
+					tileMap.SetCell(1, tilePos, 0);
+					shroomNetwork.RegisterShroom(buildShroom);
+				}
 			}
 		}
 

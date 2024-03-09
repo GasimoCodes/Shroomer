@@ -27,8 +27,9 @@ offset = Vector2(0.275, -64.295)
 
 [node name="Managers" type="Node" parent="."]
 
-[node name="MapBuilder" type="Node" parent="Managers" node_paths=PackedStringArray("camera")]
+[node name="MapBuilder" type="Node" parent="Managers" node_paths=PackedStringArray("tileMap", "camera")]
 script = ExtResource("8_x5ia4")
+tileMap = NodePath("../../TileMap")
 camera = NodePath("../../Camera2D")
 
 [node name="ShroomNet" type="Node" parent="Managers"]

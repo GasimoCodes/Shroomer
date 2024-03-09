@@ -44,24 +44,27 @@ public partial class ShroomListGUI : Node
 
 		foreach (ShroomBase shroom in Shrooms)
 		{
-			// Create a new button btn in the grid
+		// Get the water cost from shroom (you show it on the button)
+			int waterCost = shroom.WaterCost;
 
 		 // Create a new button for each shroom
         Button btn = new Button();
-		btn.Text = "shroom Button";
-     //   btn.Text = shroom.name; // Set button text to shroom name
-        Container.AddChild(btn); // Add button to the container
-
-			// Get the water cost from shroom (you show it on the button)
-			int waterCost = shroom.WaterCost;
-
+		btn.Text = shroom.ShroomName + $" (Water: {waterCost})";
+		// Add button to the container
+        Container.AddChild(btn); 
+		
 			if (waterCost > PlayerStats.Instance.Water.Value)
 			{
-				// Disable button (Godot has a builtin bool for that afaik)
+				btn.Disabled = true;
 			}
+
+			
 
 			// Register OnClick event
 			// (aka btn.OnClick => {MapBuilder.EnableBuildMode(shroom)})
+			btn.Pressed+=()=>{
+				// call the builder
+			};
 		}
 
 

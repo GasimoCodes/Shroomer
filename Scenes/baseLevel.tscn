@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dw02durl55ha5"]
 
-[ext_resource type="PackedScene" path="res://Scenes/GUIs.tscn" id="1_g8p5h"]
+[ext_resource type="PackedScene" uid="uid://fu8irs4osi5y" path="res://Scenes/GUIs.tscn" id="1_g8p5h"]
 [ext_resource type="Texture2D" uid="uid://kinmgud532hi" path="res://Art/Textures/TileSetGround/tile ground.png" id="1_siqvb"]
 [ext_resource type="Texture2D" uid="uid://dkeikst628h3h" path="res://Art/Textures/TileSetGround/tile.png" id="2_on2dp"]
 [ext_resource type="Texture2D" uid="uid://dt5r5rxng61hs" path="res://Art/Textures/TileSetGround/ground 2.png" id="3_gw7v1"]
@@ -73,10 +73,11 @@ drag_vertical_enabled = true
 
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(172.82, -4.675)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 editor_description = "holy shit its godot"
 z_index = 1
 y_sort_enabled = true
-position = Vector2(2, -64)
+position = Vector2(0, -65)
 texture = ExtResource("5_ccafm")

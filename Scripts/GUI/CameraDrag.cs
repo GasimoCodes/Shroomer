@@ -5,7 +5,7 @@ using System.Diagnostics;
 /// <summary>
 /// Dragging the camera around
 /// </summary>
-public partial class CameraDrag : Node2D
+public partial class CameraDrag : Camera2D
 {
 
 	bool btnPressed = false;

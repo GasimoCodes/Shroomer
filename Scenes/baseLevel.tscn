@@ -9,6 +9,8 @@
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
+[node name="TileMap" parent="." instance=ExtResource("5_tm2c2")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("5_6ufgd")
 
@@ -26,5 +28,3 @@ offset = Vector2(0.275, -64.295)
 
 [node name="Node" type="Node" parent="Managers"]
 script = ExtResource("8_x5ia4")
-
-[node name="TileMap" parent="." instance=ExtResource("5_tm2c2")]

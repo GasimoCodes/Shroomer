@@ -89,7 +89,6 @@ value = 90.96
 show_percentage = false
 
 [node name="SkillTree" type="CanvasLayer" parent="GUI_HUD"]
-visible = false
 
 [node name="Panel" type="Panel" parent="GUI_HUD/SkillTree"]
 anchors_preset = 15
@@ -120,3 +119,26 @@ expand_mode = 1
 
 [node name="HScrollBar" type="HScrollBar" parent="GUI_HUD/SkillTree/Panel/VBoxContainer"]
 layout_mode = 2
+
+[node name="ShroomList" type="CanvasLayer" parent="GUI_HUD"]
+
+[node name="Panel" type="Panel" parent="GUI_HUD/ShroomList"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 135.0
+offset_top = 76.0
+offset_right = -135.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_r8wvn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI_HUD/ShroomList/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_w6e4h")

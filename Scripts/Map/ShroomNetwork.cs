@@ -10,7 +10,7 @@ public partial class ShroomNetwork : Node
 	/// <summary>
 	/// List of shrooms on the map
 	/// </summary>
-	public List<ShroomBase> shrooms;
+	public List<ShroomBase> shrooms = new List<ShroomBase>();
 
 	/// <summary>
 	/// Register a shroom to the network. Call this upon placing a new shroom from the MapBuilder
@@ -24,6 +24,12 @@ public partial class ShroomNetwork : Node
 		// Add shroom to list
 
 	}
+
+	public void UnregisterShroom(ShroomBase shroom)
+	{
+        // Remove shroom from list
+		shrooms.Remove(shroom);
+    }
 
 
 	public void DoTick(){

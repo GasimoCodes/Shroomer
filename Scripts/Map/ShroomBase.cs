@@ -6,7 +6,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Base class for all shrooms
 /// </summary>
-public abstract partial class ShroomBase : Node2D, IDamageable, IBuildable
+public abstract partial class ShroomBase : Resource, IDamageable, IBuildable
 {
 	/// <summary>
 	/// Caching neighbours for performance
@@ -58,6 +58,5 @@ public abstract partial class ShroomBase : Node2D, IDamageable, IBuildable
 
     public virtual void OnDestroy()
     {
-        QueueFree();
     }
 }

@@ -40,7 +40,7 @@ public partial class ShroomListGUI : Node
 			buttonContainer.AddChild(btn);
 
 			// Create a label for the description
-			Label descriptionLabel = new Label();
+			Label descriptionLabel = new();
 			String description = "Example Description: Please add description to the ShroomBase. Thank youuu <3";
 			descriptionLabel.Text = description; 
 			descriptionLabel.Visible = false; // Initially hide description

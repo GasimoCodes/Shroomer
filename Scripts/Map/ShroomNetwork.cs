@@ -25,6 +25,21 @@ public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 
 	}
 
+	/// <summary>
+	/// Check if a shroom can be placed at a given position. Returns true if it can be placed.
+	/// </summary>
+	/// <param name="position"></param>
+	/// <param name="shroom"></param>
+	/// <returns></returns>
+	public bool CanBePlaced(Vector2 position, ShroomBase shroom)
+	{
+		// Check if position is empty
+		return !shrooms.ContainsKey(position);
+
+		// TO-DO: Check if position is neighbour to another shroom!
+	}
+
+
 	public void UnregisterShroom(ShroomBase shroom)
 	{
         // Remove shroom from list

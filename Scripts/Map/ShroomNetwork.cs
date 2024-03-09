@@ -10,7 +10,7 @@ public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 	/// <summary>
 	/// List of shrooms on the map
 	/// </summary>
-	public Dictionary<Vector2,ShroomBase> shrooms = new();
+	public Dictionary<Vector2I,ShroomBase> shrooms = new();
 
 	/// <summary>
 	/// Register a shroom to the network. Call this upon placing a new shroom from the MapBuilder
@@ -22,6 +22,7 @@ public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 		// Update neighbours with this shroom
 		
 		// Add shroom to list
+		shrooms.Add(shroom.TileMapPosition, shroom);
 
 	}
 
@@ -31,7 +32,7 @@ public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 	/// <param name="position"></param>
 	/// <param name="shroom"></param>
 	/// <returns></returns>
-	public bool CanBePlaced(Vector2 position, ShroomBase shroom)
+	public bool CanBePlaced(Vector2I position, ShroomBase shroom)
 	{
 		// Check if position is empty
 		return !shrooms.ContainsKey(position);

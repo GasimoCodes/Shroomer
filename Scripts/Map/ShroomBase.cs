@@ -12,7 +12,7 @@ public abstract partial class ShroomBase : Resource, IDamageable, IBuildable
 
 	[Export]
 	public int Health;
-	
+
 	[Export]
 	public int MaxHealth;
 
@@ -31,7 +31,7 @@ public abstract partial class ShroomBase : Resource, IDamageable, IBuildable
 	/// <summary>
 	/// Reference to location in tilemap
 	/// </summary>
-	public Vector2 TileMapPosition;
+	public Vector2I TileMapPosition;
 
     /// <summary>
     /// Caching neighbours for performance

@@ -7,10 +7,13 @@ using System.Collections.Generic;
 /// </summary>
 public partial class ShroomNetwork : Node
 {
+	/// <summary>
+	/// List of shrooms on the map
+	/// </summary>
 	public List<ShroomBase> shrooms;
 
 	/// <summary>
-	/// Register a shroom to the network. Call this upon placing a new shroom.
+	/// Register a shroom to the network. Call this upon placing a new shroom from the MapBuilder
 	/// </summary>
 	public void RegisterShroom(ShroomBase shroom){
 
@@ -19,7 +22,7 @@ public partial class ShroomNetwork : Node
 		// Update neighbours with this shroom
 		
 		// Add shroom to list
-		
+
 	}
 
 

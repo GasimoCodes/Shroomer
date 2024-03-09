@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Diagnostics;
 
+/// <summary>
+/// Dragging the camera around
+/// </summary>
 public partial class CameraDrag : Node2D
 {
 

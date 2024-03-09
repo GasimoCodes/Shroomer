@@ -22,9 +22,6 @@ public partial class PlayerStats : NodeSingleton<PlayerStats>
 		base._Process(delta);
 	}
 
-
-	
-
 }
 
 

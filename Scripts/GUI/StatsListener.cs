@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/// <summary>
+/// HUD listener for player stats
+/// </summary>
 public partial class StatsListener : Node
 {
 	[Export]
@@ -38,7 +41,7 @@ public partial class StatsListener : Node
 		PlayerStats.Instance.Energy.Value = PlayerStats.Instance.Energy.Value;
 		PlayerStats.Instance.Water.Value = PlayerStats.Instance.Water.Value;
 		PlayerStats.Instance.Humidity.Value = PlayerStats.Instance.Humidity.Value;
-		
+
 
 
 	}

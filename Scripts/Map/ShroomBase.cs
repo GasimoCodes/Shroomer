@@ -3,29 +3,27 @@ using System;
 using System.Collections.Generic;
 
 
-
+/// <summary>
+/// Base class for all shrooms
+/// </summary>
 public abstract partial class ShroomBase : Node2D, IDamageable, IBuildable
 {
-
+	/// <summary>
+	/// Caching neighbours for performance
+	/// </summary>
 	public List<ShroomBase> neighbours;
 	public int Health;
 	public int MaxHealth;
-	// Used as icon
+	
+	/// <summary>
+	/// Resource ID of icon preview
+	/// </summary>
 	public abstract Texture2D icon{ get; }
-	public Sprite2D instance;
-
-
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-	{
-
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-
-	}
+	
+	/// <summary>
+	/// Reference to location in tilemap
+	/// </summary>
+	public Vector2 TileMapPosition;
 
     public virtual void DoDamage(int damage)
     {
@@ -45,6 +43,7 @@ public abstract partial class ShroomBase : Node2D, IDamageable, IBuildable
 		}
     }
 
+	
     public virtual void OnBuild()
     {
         

@@ -1,5 +1,9 @@
 using System.Diagnostics;
 using Godot;
+
+/// <summary>
+/// Call this class to enable build mode.
+/// </summary>
 public partial class MapBuilder : Node
 {
 	
@@ -14,7 +18,10 @@ public partial class MapBuilder : Node
         EnableBuildMode(new ShroomGen());
     }
 
-
+	/// <summary>
+	/// This will turn on the Build-mode. 
+	/// </summary>
+	/// <param name="shroomBase"></param>
     public void EnableBuildMode(ShroomBase shroomBase)
 	{
         // Create new Sprite2D for the preview

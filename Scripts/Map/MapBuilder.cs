@@ -12,6 +12,9 @@ public partial class MapBuilder : Node
 	ShroomBase buildShroom = null;
 	Sprite2D previewSpawner;
 
+	[Export]
+	Camera2D camera;
+
 
 	public override void _Ready()
 	{
@@ -43,7 +46,7 @@ public partial class MapBuilder : Node
 	}
 
 
-	public void InputEvent(Node viewport, InputEvent @event, int shapeIdx)
+	public override void _Input(InputEvent @event)
 	{
 		// If build mode on
 		if (previewSpawner != null)
@@ -54,9 +57,9 @@ public partial class MapBuilder : Node
 			if (@event is InputEventMouseMotion mouseMotion)
 			{
 				Vector2 mousePos = mouseMotion.Position;
-				Vector2 cameraPos = ((Camera2D)GetNode("Camera2D")).Position;
+				Vector2 cameraPos = camera.Position;
 
-				previewSpawner.Position = mousePos + cameraPos + GetViewport().GetVisibleRect().Size / 2;
+				previewSpawner.Position = mousePos + cameraPos - GetViewport().GetVisibleRect().Size / 2;
 			}
 		}
 

@@ -26,5 +26,6 @@ offset = Vector2(0.275, -64.295)
 
 [node name="Managers" type="Node" parent="."]
 
-[node name="Node" type="Node" parent="Managers"]
+[node name="Node" type="Node" parent="Managers" node_paths=PackedStringArray("camera")]
 script = ExtResource("8_x5ia4")
+camera = NodePath("../../Camera2D")

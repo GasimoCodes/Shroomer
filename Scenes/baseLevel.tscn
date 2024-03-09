@@ -39,7 +39,7 @@ texture_region_size = Vector2i(256, 128)
 0:0/size_in_atlas = Vector2i(1, 4)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 110)
-0:0/0/y_sort_origin = -64
+0:0/0/y_sort_origin = -12
 
 [sub_resource type="TileSet" id="TileSet_pe7e0"]
 tile_shape = 1
@@ -71,13 +71,10 @@ drag_vertical_enabled = true
 
 [node name="GUIs" parent="." instance=ExtResource("1_g8p5h")]
 
-[node name="Node2D" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(172.82, -4.675)
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 editor_description = "holy shit its godot"
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, -65)
+position = Vector2(160.065, 0.715)
 texture = ExtResource("5_ccafm")
+offset = Vector2(0.275, -64.295)

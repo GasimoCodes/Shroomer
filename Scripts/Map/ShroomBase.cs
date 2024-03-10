@@ -28,6 +28,9 @@ public abstract partial class ShroomBase : Resource, IDamageable, IBuildable
 	[Export]
 	public Texture2D icon;
 	
+	[Export]
+	public Vector2I TileSetGraphicsIndex;
+	
 	/// <summary>
 	/// Reference to location in tilemap
 	/// </summary>

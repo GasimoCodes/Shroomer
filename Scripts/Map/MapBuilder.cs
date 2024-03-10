@@ -78,19 +78,25 @@ public partial class MapBuilder : Node
 			}
 			else
 			{
+				// If can be placed
 				previewSpawner.Modulate = new Color(1f, 1f, 1f, 0.5f);
-			}
 
-
-			if (@event is InputEventMouse mouseButton)
-			{
-				if (mouseButton.ButtonMask == MouseButtonMask.Left)
+				if (@event is InputEventMouse mouseButton)
 				{
-					buildShroom.TileMapPosition = tilePos;
-					tileMap.SetCell(1, tilePos, 0);
-					shroomNetwork.RegisterShroom(buildShroom);
+					if (mouseButton.ButtonMask == MouseButtonMask.Left)
+					{
+						buildShroom.TileMapPosition = tilePos;
+						tileMap.SetCell(1, tilePos, 1, buildShroom.TileSetGraphicsIndex);
+						shroomNetwork.RegisterShroom(buildShroom);
+						PlayerStats.Instance.Water.Value -= buildShroom.WaterCost;
+					}
 				}
+
+
 			}
+
+
+
 		}
 
 

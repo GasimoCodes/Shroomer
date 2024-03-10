@@ -34,8 +34,15 @@ public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 	/// <returns></returns>
 	public bool CanBePlaced(Vector2I position, ShroomBase shroom)
 	{
+		bool canBePlaced = true;
+
 		// Check if position is empty
-		return !shrooms.ContainsKey(position);
+		canBePlaced &= !shrooms.ContainsKey(position);
+
+		// Check if water level is enough
+		canBePlaced &=  (PlayerStats.Instance.Water.Value >= shroom.WaterCost); 
+
+		return canBePlaced;
 
 		// TO-DO: Check if position is neighbour to another shroom!
 	}

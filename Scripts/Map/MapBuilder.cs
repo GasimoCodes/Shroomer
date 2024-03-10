@@ -61,15 +61,11 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 			// Translate 2D mouse position to world position
 
 
-			Vector2 local = camera.GetGlobalMousePosition() + camera.Position;
-        	
-			Vector2I tilePos = tileMap.LocalToMap(local);
-			tilePos.X -= 1;
-			tilePos.Y -= 2;
+			Vector2 global = (camera.GetGlobalMousePosition());
+        	previewSpawner.Position = global;
 
-			previewSpawner.Position = local;
-
-
+			Vector2I tilePos = tileMap.LocalToMap(tileMap.GetLocalMousePosition());
+			
 			if (!shroomNetwork.CanBePlaced(tilePos, buildShroom))
 			{
 				previewSpawner.Modulate = new Color(0.5f, 0, 0, 0.5f);

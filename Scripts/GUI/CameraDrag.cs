@@ -16,11 +16,11 @@ public partial class CameraDrag : Camera2D
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+		if (@event is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Right && mouseEvent.Pressed)
 		{
 			btnPressed = true;
 		}
-		else if (@event is InputEventMouseButton mouseEvent2 && !mouseEvent2.Pressed)
+		else if (@event is InputEventMouseButton mouseEvent2 && mouseEvent2.ButtonIndex == MouseButton.Right && !mouseEvent2.Pressed)
 		{
 			btnPressed = false;
 		}

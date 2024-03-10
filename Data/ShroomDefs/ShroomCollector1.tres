@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ShroomWaterCollector" load_steps=3 format=3 uid="uid://b44431fax2763"]
 
 [ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomWaterCollector.cs" id="1_i1wv6"]
-[ext_resource type="Texture2D" uid="uid://b7nfi6j200pat" path="res://Art/Textures/shroom building.png" id="1_rlb8o"]
+[ext_resource type="Texture2D" uid="uid://bdpaw3vuqtke2" path="res://Art/Textures/TileSetShrooms/fin-0006.png" id="1_ng2ok"]
 
 [resource]
 script = ExtResource("1_i1wv6")
@@ -14,6 +14,6 @@ WaterCost = 10
 WaterCostPerTick = 0
 ShroomName = "Wasshroom"
 ShroomDescription = ""
-icon = ExtResource("1_rlb8o")
+icon = ExtResource("1_ng2ok")
 TileSetGraphicsIndex = Vector2i(0, 0)
 SpriteSourceIndex = 0

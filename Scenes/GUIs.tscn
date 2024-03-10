@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://fu8irs4osi5y"]
+[gd_scene load_steps=12 format=3 uid="uid://fu8irs4osi5y"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/StatsListener.cs" id="1_ypgdc"]
 [ext_resource type="Script" path="res://Scripts/PlayerStats.cs" id="2_d4j71"]
 [ext_resource type="Texture2D" uid="uid://dt5r5rxng61hs" path="res://Art/Textures/TileSetGround/ground 2.png" id="3_dhf0m"]
 [ext_resource type="Script" path="res://Scripts/GUI/ShroomListGUI.cs" id="4_etfe5"]
-[ext_resource type="Resource" uid="uid://it735pqlqobq" path="res://Data/ShroomDefs/ShroomGen1.tres" id="5_wosaw"]
+[ext_resource type="Resource" uid="uid://0y1ug7tb57bj" path="res://Data/ShroomDefs/ShroomGen1.tres" id="5_wosaw"]
+[ext_resource type="Resource" uid="uid://yacfnu80ynu" path="res://Data/ShroomDefs/ShroomCollector2.tres" id="6_crpn7"]
 [ext_resource type="Resource" uid="uid://b44431fax2763" path="res://Data/ShroomDefs/ShroomCollector1.tres" id="6_r3eno"]
+[ext_resource type="Resource" uid="uid://de6v3dfaic7ra" path="res://Data/ShroomDefs/ShroomGen3.tres" id="8_lv2k2"]
+[ext_resource type="PackedScene" uid="uid://cbetsy0n8mkj" path="res://Scenes/UIs/ShroomButton.tscn" id="9_chyxf"]
 
 [sub_resource type="Theme" id="Theme_r8wvn"]
 
@@ -137,8 +140,9 @@ layout_mode = 2
 
 [node name="ShroomList" type="CanvasLayer" parent="GUI_HUD" node_paths=PackedStringArray("Container")]
 script = ExtResource("4_etfe5")
-Container = NodePath("Panel/VBoxContainer")
-Shrooms = Array[Resource]([ExtResource("5_wosaw"), ExtResource("6_r3eno")])
+Container = NodePath("Panel/GridContainer")
+buttonTemplate = ExtResource("9_chyxf")
+Shrooms = Array[Resource]([ExtResource("6_r3eno"), ExtResource("6_crpn7"), ExtResource("5_wosaw"), ExtResource("8_lv2k2")])
 
 [node name="Panel" type="Panel" parent="GUI_HUD/ShroomList"]
 anchors_preset = 15
@@ -152,21 +156,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_r8wvn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI_HUD/ShroomList/Panel"]
+[node name="GridContainer" type="GridContainer" parent="GUI_HUD/ShroomList/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_w6e4h")
+columns = 3
 
-[node name="Button" type="Button" parent="GUI_HUD/ShroomList/Panel/VBoxContainer"]
+[node name="Button" parent="GUI_HUD/ShroomList/Panel/GridContainer" instance_placeholder="res://Scenes/UIs/ShroomButton.tscn"]
 layout_mode = 2
-text = "aaaaaaaaaaaaaaaaaa"
 
-[node name="Button2" type="Button" parent="GUI_HUD/ShroomList/Panel/VBoxContainer"]
+[node name="Button2" parent="GUI_HUD/ShroomList/Panel/GridContainer" instance=ExtResource("9_chyxf")]
 layout_mode = 2
-text = "aaaaaaaaaaaaaaaaaa"
+
+[node name="Button3" parent="GUI_HUD/ShroomList/Panel/GridContainer" instance=ExtResource("9_chyxf")]
+layout_mode = 2
 
 [connection signal="pressed" from="GUI_HUD/HUD/HBoxContainer/PanelContainer/GridContainer/Button2" to="GUI_HUD/ShroomList" method="ShowAndUpdateContainer"]

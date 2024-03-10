@@ -6,6 +6,8 @@ public partial class ShroomListGUI : CanvasLayer
 	[Export]
 	public Control Container;
 
+	[Export]
+	public PackedScene buttonTemplate;
 
 	[Export]
 	public ShroomBase[] Shrooms;
@@ -25,39 +27,35 @@ public partial class ShroomListGUI : CanvasLayer
 
 		foreach (ShroomBase shroom in Shrooms)
 		{
-			// Create a new TextureButton for each shroom
-			TextureButton btn = new TextureButton();
-			btn.TextureNormal = shroom.icon;
 
-			// Add tooltip with shroom name and water cost
-			Control tooltip = new Control();
-			Label tooltipLabel = new Label();
-			tooltipLabel.Text = $"{shroom.ShroomName}\nWater Cost: {shroom.WaterCost}";
-			
-			// Commented this to avoid compilation issues on my pc
-			// tooltipLabel.AutosizeEnum = Label.AutosizeEnum.Expand;
-			
-			
-			tooltip.AddChild(tooltipLabel);
-			btn.AddChild(tooltip);
+			// Instantiate the scene button
+			var Scene = GD.Load<PackedScene>(buttonTemplate.ResourcePath);
+			Node sceneInstance = Scene.Instantiate();
+			Container.AddChild(sceneInstance);
 
-			// Create a VBoxContainer to hold button and description
-			VBoxContainer buttonContainer = new VBoxContainer();
-			buttonContainer.AddChild(btn);
+			// Get TextureRect
+			TextureRect rect = (TextureRect) sceneInstance.GetNode("HBoxContainer/TextureRect");
+			rect.Texture = shroom.icon;
 
-			// Create a label for the description
-			Label descriptionLabel = new();
-			String description = "Example Description: Please add description to the ShroomBase. Thank youuu <3";
-			descriptionLabel.Text = description; 
-			descriptionLabel.Visible = false; // Initially hide description
-			buttonContainer.AddChild(descriptionLabel);
+			// Get LabelName
+			Label labelName = (Label) sceneInstance.GetNode("HBoxContainer/VBoxContainer/Name");
+			labelName.Text = shroom.ShroomName;
 
-			// Add buttonContainer to the main container
-			Container.AddChild(buttonContainer);
+			Label labelDescription = (Label) sceneInstance.GetNode("HBoxContainer/VBoxContainer/Description");
+			labelDescription.Text = shroom.ShroomDescription;
+
+			Label labelCost = (Label) sceneInstance.GetNode("HBoxContainer/VBoxContainer/Cost");
+			labelCost.Text = "Water Cost: " + shroom.WaterCost;
+
+			Button btn = (Button) sceneInstance.GetNode(".");
+
+
 
 			// Event handler to show/hide description on mouse enter/exit
+			/*
 			btn.MouseEntered += () => { descriptionLabel.Visible = true; tooltip.Visible = true;};
 			btn.MouseExited += () => { descriptionLabel.Visible = false; tooltip.Visible = false;};
+			*/
 
 			// Check if player has enough water and disable button if not
 			if (shroom.WaterCost > PlayerStats.Instance.Water.Value)
@@ -68,7 +66,6 @@ public partial class ShroomListGUI : CanvasLayer
 			// Register OnClick event
 			btn.Pressed += () =>
 			{
-
 				MapBuilder.Instance.EnableBuildMode(shroom);
 				Visible = false;
 			};

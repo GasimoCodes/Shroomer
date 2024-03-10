@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbetsy0n8mkj"]
+
+[ext_resource type="Texture2D" uid="uid://q25aar6k0jrq" path="res://Art/Textures/TileSetShrooms/fin-0005.png" id="1_a00w2"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(285, 150)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture = ExtResource("1_a00w2")
+expand_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Name"
+autowrap_mode = 1
+
+[node name="Description" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.760784, 0.760784, 1)
+theme_override_font_sizes/font_size = 11
+text = "Awawawawawawawawawawawawawawasdasdfkhsdijkfhsjifhksdjfhksdhfksdjhfksdjhksdjhfksjdhfkshdfksjhdfkj"
+autowrap_mode = 1
+
+[node name="Cost" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0.901961, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "Cost: 154631532L
+Consumes: 5L/s
+Generates: "
+autowrap_mode = 1

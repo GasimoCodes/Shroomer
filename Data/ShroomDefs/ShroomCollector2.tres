@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ShroomWaterCollector" load_steps=3 format=3 uid="uid://yacfnu80ynu"]
+
+[ext_resource type="Texture2D" uid="uid://cx7ys18cldioj" path="res://Art/Textures/TileSetShrooms/fin-0004.png" id="1_senwj"]
+[ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomWaterCollector.cs" id="2_wr7bp"]
+
+[resource]
+script = ExtResource("2_wr7bp")
+waterCapacity = 190
+CollectPerTick = 30
+minHumidityToCollect = 5
+Health = 180
+MaxHealth = 185
+WaterCost = 205
+WaterCostPerTick = 0
+ShroomName = "Wasshroom"
+ShroomDescription = ""
+icon = ExtResource("1_senwj")
+TileSetGraphicsIndex = Vector2i(0, 0)
+SpriteSourceIndex = 2

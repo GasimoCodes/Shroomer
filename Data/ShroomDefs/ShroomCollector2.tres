@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_wr7bp")
 waterCapacity = 190
-CollectPerTick = 30
+CollectPerTick = 3
 minHumidityToCollect = 5
 Health = 180
 MaxHealth = 185

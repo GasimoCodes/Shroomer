@@ -9,6 +9,9 @@ public partial class ShroomWaterCollector : ShroomBase
 	public int waterCapacity;
 
 	[Export]
+	public int CollectPerTick;
+
+	[Export]
 	public int minHumidityToCollect;
 
 	public ShroomWaterCollector()
@@ -45,7 +48,7 @@ public partial class ShroomWaterCollector : ShroomBase
 
 		if(PlayerStats.Instance.Humidity.Value > minHumidityToCollect)
 		{
-			PlayerStats.Instance.Water.Value += 1;
+			PlayerStats.Instance.Water.Value += CollectPerTick;
 		}
 	}
 

@@ -86,7 +86,7 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 					if (mouseButton.ButtonMask == MouseButtonMask.Left)
 					{
 						buildShroom.TileMapPosition = tilePos;
-						tileMap.SetCell(1, tilePos, 1, buildShroom.TileSetGraphicsIndex);
+						tileMap.SetCell(1, tilePos, buildShroom.SpriteSourceIndex, buildShroom.TileSetGraphicsIndex);
 						shroomNetwork.RegisterShroom(buildShroom);
 						buildShroom.OnBuild();
 						PlayerStats.Instance.Water.Value -= buildShroom.WaterCost;

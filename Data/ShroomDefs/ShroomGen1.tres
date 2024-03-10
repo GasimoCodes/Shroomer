@@ -1,8 +1,17 @@
-[gd_resource type="Resource" script_class="ShroomGen" load_steps=2 format=3 uid="uid://it735pqlqobq"]
+[gd_resource type="Resource" script_class="ShroomGen" load_steps=3 format=3 uid="uid://it735pqlqobq"]
 
+[ext_resource type="Texture2D" uid="uid://6f5gahvgej8r" path="res://Art/Textures/TileSetGround/shroom tile.png" id="1_3kthm"]
 [ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomGen.cs" id="1_vr2rn"]
 
 [resource]
 script = ExtResource("1_vr2rn")
+PowerGenerationPerTick = 1
 Health = 0
 MaxHealth = 0
+WaterCost = 0
+WaterCostPerTick = 1
+ShroomName = ""
+ShroomDescription = ""
+icon = ExtResource("1_3kthm")
+TileSetGraphicsIndex = Vector2i(0, 0)
+SpriteSourceIndex = 5

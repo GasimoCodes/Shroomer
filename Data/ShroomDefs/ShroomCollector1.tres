@@ -5,11 +5,15 @@
 
 [resource]
 script = ExtResource("1_i1wv6")
-waterCapacity = 10
+waterCapacity = 20
+CollectPerTick = 5
 minHumidityToCollect = 15
 Health = 100
 MaxHealth = 115
-WaterCost = 5
+WaterCost = 10
+WaterCostPerTick = 0
 ShroomName = "Wasshroom"
+ShroomDescription = ""
 icon = ExtResource("1_rlb8o")
 TileSetGraphicsIndex = Vector2i(0, 0)
+SpriteSourceIndex = 0

@@ -29,13 +29,13 @@ public partial class ShroomWaterCollector : ShroomBase
     public override void OnBuild()
     {
         base.OnBuild();
-		PlayerStats.Instance.Water.MaxValue += 10;
+		PlayerStats.Instance.Water.MaxValue += waterCapacity;
     }
 
 	public override void OnDestroy()
 	{
 		base.OnDestroy();
-		PlayerStats.Instance.Water.MaxValue -= 10;
+		PlayerStats.Instance.Water.MaxValue -= waterCapacity;
 	}
 
     public override void DoTick()

@@ -11,8 +11,8 @@ public partial class CameraDrag : Camera2D
 	bool btnPressed = false;
 	Vector2 mouseDelta = new Vector2();
 
-	int maxZoom = 2;
-	int minZoom = 0;
+	float maxZoom = 2;
+	float minZoom = 0.5f;
 
 	public override void _Input(InputEvent @event)
 	{
@@ -30,7 +30,7 @@ public partial class CameraDrag : Camera2D
 			if (btnPressed)
 			{
 				mouseDelta = mouseMotion.Relative;
-				Position -= mouseDelta;
+				Position -= mouseDelta / Zoom;
 			}
 		}
 

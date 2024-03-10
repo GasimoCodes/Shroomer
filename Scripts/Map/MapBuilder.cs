@@ -5,7 +5,7 @@ using Godot;
 /// <summary>
 /// Call this class to enable build mode.
 /// </summary>
-public partial class MapBuilder : Node
+public partial class MapBuilder : NodeSingleton<MapBuilder>
 {
 	[Export]
 	public TileMap tileMap;
@@ -21,7 +21,7 @@ public partial class MapBuilder : Node
 
 	public override void _Ready()
 	{
-		EnableBuildMode(new ShroomGen());
+		base._Ready();
 	}
 
 	/// <summary>

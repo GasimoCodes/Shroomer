@@ -1,17 +1,18 @@
 using Godot;
 using System;
 
-public partial class ShroomListGUI : Node
+public partial class ShroomListGUI : CanvasLayer
 {
 	[Export]
 	public Control Container;
+
 
 	[Export]
 	public ShroomBase[] Shrooms;
 
 	public override void _Ready()
 	{
-		Container.Visible = false;
+		Visible = false;
 	}
 
 	public void ShowAndUpdateContainer()
@@ -62,11 +63,13 @@ public partial class ShroomListGUI : Node
 			// Register OnClick event
 			btn.Pressed += () =>
 			{
-				// Call the builder or perform any other action
+
+				MapBuilder.Instance.EnableBuildMode(shroom);
+				Visible = false;
 			};
 		}
 
 		// Show container
-		Container.Visible = true;
+		Visible = true;
 	}
 }

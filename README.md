@@ -1,4 +1,5 @@
-![Frame 2](https://github.com/GasimoCodes/Shroomer/assets/22917863/9a9dcb66-9ac9-4753-96a1-8142db456d64)
+![Frame 2(4)](https://github.com/GasimoCodes/Shroomer/assets/22917863/5b02230d-29fe-41e6-a3ed-cd5068881848)
+
 
 An 48 Hours Amanita GameJam submission made in Godot. 
 See [itch.io for download](https://gasimo.itch.io/fungoria)

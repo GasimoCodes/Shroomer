@@ -18,6 +18,8 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 
 	ShroomNetwork shroomNetwork;
 
+	private bool destroy;
+
 
 	public override void _Ready()
 	{
@@ -54,18 +56,20 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 
 	public override void _Input(InputEvent @event)
 	{
+		shroomNetwork = ShroomNetwork.Instance;
+
 		// If build mode on
 		if (previewSpawner != null)
 		{
-			shroomNetwork = ShroomNetwork.Instance;
 			// Translate 2D mouse position to world position
 
-
 			Vector2 global = (camera.GetGlobalMousePosition());
-        	previewSpawner.Position = global;
 
 			Vector2I tilePos = tileMap.LocalToMap(tileMap.GetLocalMousePosition());
-			
+
+			Vector2 local = tileMap.MapToLocal(tilePos);
+			previewSpawner.Position = local + tileMap.Position /*- new Vector2(0, 110)*/;
+
 			if (!shroomNetwork.CanBePlaced(tilePos, buildShroom))
 			{
 				previewSpawner.Modulate = new Color(0.5f, 0, 0, 0.5f);
@@ -86,14 +90,45 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 						PlayerStats.Instance.Water.Value -= buildShroom.WaterCost;
 					}
 				}
-
-
 			}
-
-
-
 		}
 
+		// Enter destroy mode
+		if (@event is InputEventKey key)
+		{
+			if (!destroy && key.Pressed && key.GetKeycodeWithModifiers() == Key.X)
+			{
+				destroy = true;
+				DisableBuildMode();
+				return;
+			}
 
+			if (destroy && key.Pressed && key.GetKeycodeWithModifiers() == Key.X)
+			{
+				destroy = false;
+				return;
+			}
+		}
+
+		// Destroy mode
+		if (destroy && @event is InputEventMouseButton buttonEvent)
+		{
+			Vector2I tilePos = tileMap.LocalToMap(tileMap.GetLocalMousePosition());
+
+			try
+			{
+				ShroomBase shroom = shroomNetwork.shrooms[tilePos];
+
+				if (!shroomNetwork.CanBePlaced(tilePos, shroom))
+				{
+					shroomNetwork.UnregisterShroom(shroom);
+
+					tileMap.SetCell(1, tilePos);
+				}
+			}
+			catch (Exception ignored)
+			{
+			}
+		}
 	}
 }

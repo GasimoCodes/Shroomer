@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShroomGen" load_steps=3 format=3 uid="uid://0vi4gnbghx17"]
+
+[ext_resource type="Texture2D" uid="uid://bmn4tcfwmr1xc" path="res://Art/Textures/TileSetShrooms/fin-0011.png" id="1_p51rf"]
+[ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomGen.cs" id="2_c3prr"]
+
+[resource]
+script = ExtResource("2_c3prr")
+PowerGenerationPerTick = -5
+Health = 265
+MaxHealth = 305
+WaterCost = 100000
+WaterCostPerTick = 0
+ShroomName = "Godoshroom"
+ShroomDescription = "Rare decoration piece"
+icon = ExtResource("1_p51rf")
+TileSetGraphicsIndex = Vector2i(0, 0)
+SpriteSourceIndex = 7

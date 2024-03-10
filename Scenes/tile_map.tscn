@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cx7ys18cldioj" path="res://Art/Textures/TileSetShrooms/fin-0004.png" id="3_fe2uf"]
 [ext_resource type="Texture2D" uid="uid://dkeikst628h3h" path="res://Art/Textures/TileSetGround/tile.png" id="3_gmp57"]
 [ext_resource type="Texture2D" uid="uid://dt5r5rxng61hs" path="res://Art/Textures/TileSetGround/ground 2.png" id="4_362df"]
-[ext_resource type="Texture2D" uid="uid://wey27aqqu0wp" path="res://Art/Textures/TileSetShrooms/fin-0009.png" id="4_p18je"]
+[ext_resource type="Texture2D" uid="uid://bmn4tcfwmr1xc" path="res://Art/Textures/TileSetShrooms/fin-0011.png" id="4_h6opb"]
 [ext_resource type="Texture2D" uid="uid://btatammyj6iuk" path="res://Art/Textures/TileSetShrooms/fin-0002.png" id="6_uh6g0"]
 [ext_resource type="Texture2D" uid="uid://dwov1ysedr3xc" path="res://Art/Textures/TileSetShrooms/fin-0001.png" id="7_sttfi"]
 [ext_resource type="Texture2D" uid="uid://d3p632hwqrf1" path="res://Art/Textures/TileSetShrooms/fin-0003.png" id="7_t80go"]
@@ -39,9 +39,10 @@ texture_region_size = Vector2i(256, 128)
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7t6o"]
-texture = ExtResource("4_p18je")
+texture = ExtResource("4_h6opb")
 texture_region_size = Vector2i(256, 128)
-0:2/0 = 0
+0:1/size_in_atlas = Vector2i(1, 3)
+0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1eiu"]
 texture = ExtResource("3_fe2uf")
@@ -131,3 +132,6 @@ layer_1/tile_data = PackedInt32Array(-1, 9, 2, 851973, 9, 2, 655366, 9, 2, -6553
 stream = ExtResource("13_8fexw")
 volume_db = -27.7
 autoplay = true
+max_distance = 1e+14
+attenuation = 1e-05
+panning_strength = 0.0

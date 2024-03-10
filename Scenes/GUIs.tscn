@@ -8,11 +8,11 @@
 [ext_resource type="Resource" uid="uid://yacfnu80ynu" path="res://Data/ShroomDefs/ShroomCollector2.tres" id="6_crpn7"]
 [ext_resource type="Resource" uid="uid://b44431fax2763" path="res://Data/ShroomDefs/ShroomCollector1.tres" id="6_r3eno"]
 [ext_resource type="Resource" uid="uid://de6v3dfaic7ra" path="res://Data/ShroomDefs/ShroomGen3.tres" id="8_lv2k2"]
-[ext_resource type="Resource" path="res://Data/ShroomDefs/DischargeSgroom.tres" id="9_7dybc"]
+[ext_resource type="Resource" uid="uid://cabpcgppo1g1u" path="res://Data/ShroomDefs/DischargeSgroom.tres" id="9_7dybc"]
 [ext_resource type="PackedScene" uid="uid://cbetsy0n8mkj" path="res://Scenes/UIs/ShroomButton.tscn" id="9_chyxf"]
 [ext_resource type="Resource" uid="uid://it735pqlqobq" path="res://Data/ShroomDefs/ShroomGen2.tres" id="9_cqrac"]
-[ext_resource type="Resource" uid="uid://0vi4gnbghx17" path="res://Data/ShroomDefs/GodotShroom.tres" id="11_6w8mb"]
-[ext_resource type="Resource" uid="uid://cy4dfrdhn26tt" path="res://Data/ShroomDefs/BatteryShroom.tres" id="12_p5l7x"]
+[ext_resource type="Resource" uid="uid://brf1b5wkr1ko" path="res://Data/ShroomDefs/GodotShroom.tres" id="11_6w8mb"]
+[ext_resource type="Resource" path="res://Data/ShroomDefs/BatteryShroom.tres" id="12_p5l7x"]
 
 [sub_resource type="Theme" id="Theme_r8wvn"]
 
@@ -50,7 +50,6 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="Button" type="Button" parent="GUI_HUD/HUD/HBoxContainer/PanelContainer/GridContainer"]
-visible = false
 layout_mode = 2
 text = "Shroom Menu"
 

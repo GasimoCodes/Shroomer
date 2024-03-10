@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ShroomGen" load_steps=3 format=3 uid="uid://0vi4gnbghx17"]
+[gd_resource type="Resource" script_class="ShroomGen" load_steps=3 format=3 uid="uid://brf1b5wkr1ko"]
 
 [ext_resource type="Texture2D" uid="uid://bmn4tcfwmr1xc" path="res://Art/Textures/TileSetShrooms/fin-0011.png" id="1_p51rf"]
 [ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomGen.cs" id="2_c3prr"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ShroomPowerContainer" load_steps=3 format=3 uid="uid://dlmyrx72lddhh"]
+[gd_resource type="Resource" script_class="ShroomPowerContainer" load_steps=3 format=3 uid="uid://cabpcgppo1g1u"]
 
 [ext_resource type="Texture2D" uid="uid://b0up70tckwcxe" path="res://Art/Textures/TileSetShrooms/fin-0012.png" id="1_4t7n4"]
 [ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomPowerContainer.cs" id="2_yovqn"]

@@ -32,6 +32,8 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 	/// <param name="shroomBase"></param>
 	public void EnableBuildMode(ShroomBase shroomBase)
 	{
+		destroy = false;
+
 		// Create new Sprite2D for the preview
 		previewSpawner = new Sprite2D
 		{
@@ -83,6 +85,8 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 				{
 					if (mouseButton.ButtonMask == MouseButtonMask.Left)
 					{
+						buildShroom = (ShroomBase)buildShroom.Duplicate();
+
 						buildShroom.TileMapPosition = tilePos;
 						tileMap.SetCell(1, tilePos, buildShroom.SpriteSourceIndex, buildShroom.TileSetGraphicsIndex);
 						shroomNetwork.RegisterShroom(buildShroom);
@@ -119,12 +123,9 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 			{
 				ShroomBase shroom = shroomNetwork.shrooms[tilePos];
 
-				if (!shroomNetwork.CanBePlaced(tilePos, shroom))
-				{
-					shroomNetwork.UnregisterShroom(shroom);
+				shroomNetwork.UnregisterShroom(shroom);
 
-					tileMap.SetCell(1, tilePos);
-				}
+				tileMap.SetCell(1, tilePos);
 			}
 			catch (Exception ignored)
 			{

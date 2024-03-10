@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ShroomPowerContainer" load_steps=3 format=3 uid="uid://dlmyrx72lddhh"]
+
+[ext_resource type="Texture2D" uid="uid://b0up70tckwcxe" path="res://Art/Textures/TileSetShrooms/fin-0012.png" id="1_4t7n4"]
+[ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomPowerContainer.cs" id="2_yovqn"]
+
+[resource]
+script = ExtResource("2_yovqn")
+PowerCapacity = 10
+Health = 55
+MaxHealth = 70
+WaterCost = 20
+WaterCostPerTick = 1
+PowerCostPerTick = 2
+ShroomName = "Disrcharge Fungi"
+ShroomDescription = "Stores a small amount of energy but discharges it when threatened."
+icon = ExtResource("1_4t7n4")
+TileSetGraphicsIndex = Vector2i(0, 0)
+SpriteSourceIndex = 13

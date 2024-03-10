@@ -20,6 +20,9 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 
 	private bool destroy;
 
+	[Export]
+	public AudioStreamPlayer audioPlayer;
+
 
 	public override void _Ready()
 	{
@@ -60,6 +63,8 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 	{
 		shroomNetwork = ShroomNetwork.Instance;
 
+		AudioStreamPlayer2D aaa = new AudioStreamPlayer2D();
+
 		// If build mode on
 		if (previewSpawner != null)
 		{
@@ -70,7 +75,7 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 			Vector2I tilePos = tileMap.LocalToMap(tileMap.GetLocalMousePosition());
 
 			Vector2 local = tileMap.MapToLocal(tilePos);
-			previewSpawner.Position = local + tileMap.Position /*- new Vector2(0, 110)*/;
+			previewSpawner.Position = local + tileMap.Position - new Vector2(0, 65);
 
 			if (!shroomNetwork.CanBePlaced(tilePos, buildShroom))
 			{
@@ -92,6 +97,8 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 						shroomNetwork.RegisterShroom(buildShroom);
 						buildShroom.OnBuild();
 						PlayerStats.Instance.Water.Value -= buildShroom.WaterCost;
+
+						audioPlayer.Play();
 					}
 				}
 			}

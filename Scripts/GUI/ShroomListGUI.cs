@@ -45,7 +45,7 @@ public partial class ShroomListGUI : CanvasLayer
 			labelDescription.Text = shroom.ShroomDescription;
 
 			Label labelCost = (Label) sceneInstance.GetNode("HBoxContainer/VBoxContainer/Cost");
-			labelCost.Text = "Water Cost: " + shroom.WaterCost;
+			labelCost.Text = $"Water Cost: {shroom.WaterCost}\n Energy Cost/Tick: {shroom.PowerCostPerTick} \n Water Cost/Tick: {shroom.WaterCostPerTick}";
 
 			Button btn = (Button) sceneInstance.GetNode(".");
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://fu8irs4osi5y"]
+[gd_scene load_steps=16 format=3 uid="uid://fu8irs4osi5y"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/StatsListener.cs" id="1_ypgdc"]
 [ext_resource type="Script" path="res://Scripts/PlayerStats.cs" id="2_d4j71"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://yacfnu80ynu" path="res://Data/ShroomDefs/ShroomCollector2.tres" id="6_crpn7"]
 [ext_resource type="Resource" uid="uid://b44431fax2763" path="res://Data/ShroomDefs/ShroomCollector1.tres" id="6_r3eno"]
 [ext_resource type="Resource" uid="uid://de6v3dfaic7ra" path="res://Data/ShroomDefs/ShroomGen3.tres" id="8_lv2k2"]
+[ext_resource type="Resource" uid="uid://dlmyrx72lddhh" path="res://Data/ShroomDefs/DischargeSgroom.tres" id="9_7dybc"]
 [ext_resource type="PackedScene" uid="uid://cbetsy0n8mkj" path="res://Scenes/UIs/ShroomButton.tscn" id="9_chyxf"]
 [ext_resource type="Resource" uid="uid://it735pqlqobq" path="res://Data/ShroomDefs/ShroomGen2.tres" id="9_cqrac"]
 [ext_resource type="Resource" path="res://Data/ShroomDefs/GodotShroom.tres" id="11_6w8mb"]
@@ -145,7 +146,7 @@ layout_mode = 2
 script = ExtResource("4_etfe5")
 Container = NodePath("Panel/GridContainer")
 buttonTemplate = ExtResource("9_chyxf")
-Shrooms = Array[Resource]([ExtResource("6_r3eno"), ExtResource("6_crpn7"), ExtResource("5_wosaw"), ExtResource("9_cqrac"), ExtResource("8_lv2k2"), ExtResource("11_6w8mb"), ExtResource("12_p5l7x")])
+Shrooms = Array[Resource]([ExtResource("6_r3eno"), ExtResource("6_crpn7"), ExtResource("5_wosaw"), ExtResource("9_7dybc"), ExtResource("9_cqrac"), ExtResource("8_lv2k2"), ExtResource("12_p5l7x"), ExtResource("11_6w8mb")])
 
 [node name="Panel" type="Panel" parent="GUI_HUD/ShroomList"]
 anchors_preset = 15

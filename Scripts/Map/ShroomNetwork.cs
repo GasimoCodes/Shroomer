@@ -67,6 +67,7 @@ public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 	{
         // Remove shroom from list
 		shrooms.Remove(shroom.TileMapPosition);
+		shroom.OnDestroy();
     }
 
 

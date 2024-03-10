@@ -137,32 +137,36 @@ layout_mode = 2
 
 [node name="ShroomList" type="CanvasLayer" parent="GUI_HUD" node_paths=PackedStringArray("Container")]
 script = ExtResource("4_etfe5")
-Container = NodePath("PanelContainer/Panel/ScrollContainer/GridContainer")
-Shrooms = Array[Resource]([ExtResource("5_wosaw"), ExtResource("6_r3eno"), ExtResource("5_wosaw"), ExtResource("6_r3eno"), ExtResource("5_wosaw")])
+Container = NodePath("Panel/VBoxContainer")
+Shrooms = Array[Resource]([ExtResource("5_wosaw"), ExtResource("6_r3eno")])
 
-[node name="PanelContainer" type="PanelContainer" parent="GUI_HUD/ShroomList"]
+[node name="Panel" type="Panel" parent="GUI_HUD/ShroomList"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 135.0
+offset_top = 76.0
+offset_right = -135.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_r8wvn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI_HUD/ShroomList/Panel"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_w6e4h")
 
-[node name="Panel" type="Panel" parent="GUI_HUD/ShroomList/PanelContainer"]
+[node name="Button" type="Button" parent="GUI_HUD/ShroomList/Panel/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = SubResource("Theme_r8wvn")
+text = "aaaaaaaaaaaaaaaaaa"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="GUI_HUD/ShroomList/PanelContainer/Panel"]
+[node name="Button2" type="Button" parent="GUI_HUD/ShroomList/Panel/VBoxContainer"]
 layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
-size_flags_vertical = 3
-
-[node name="GridContainer" type="GridContainer" parent="GUI_HUD/ShroomList/PanelContainer/Panel/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-columns = 3
+text = "aaaaaaaaaaaaaaaaaa"
 
 [connection signal="pressed" from="GUI_HUD/HUD/HBoxContainer/PanelContainer/GridContainer/Button2" to="GUI_HUD/ShroomList" method="ShowAndUpdateContainer"]

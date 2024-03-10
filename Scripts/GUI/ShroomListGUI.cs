@@ -33,7 +33,11 @@ public partial class ShroomListGUI : CanvasLayer
 			Control tooltip = new Control();
 			Label tooltipLabel = new Label();
 			tooltipLabel.Text = $"{shroom.ShroomName}\nWater Cost: {shroom.WaterCost}";
-			tooltipLabel.AutosizeEnum = Label.AutosizeEnum.Expand;
+			
+			// Commented this to avoid compilation issues on my pc
+			// tooltipLabel.AutosizeEnum = Label.AutosizeEnum.Expand;
+			
+			
 			tooltip.AddChild(tooltipLabel);
 			btn.AddChild(tooltip);
 

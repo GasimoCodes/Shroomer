@@ -88,6 +88,7 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 						buildShroom.TileMapPosition = tilePos;
 						tileMap.SetCell(1, tilePos, 1, buildShroom.TileSetGraphicsIndex);
 						shroomNetwork.RegisterShroom(buildShroom);
+						buildShroom.OnBuild();
 						PlayerStats.Instance.Water.Value -= buildShroom.WaterCost;
 					}
 				}

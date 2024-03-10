@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShroomWaterCollector" load_steps=3 format=3 uid="uid://b44431fax2763"]
+
+[ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomWaterCollector.cs" id="1_i1wv6"]
+[ext_resource type="Texture2D" uid="uid://b7nfi6j200pat" path="res://Art/Textures/shroom building.png" id="1_rlb8o"]
+
+[resource]
+script = ExtResource("1_i1wv6")
+waterCapacity = 10
+minHumidityToCollect = 15
+Health = 100
+MaxHealth = 115
+WaterCost = 5
+ShroomName = "Wasshroom"
+icon = ExtResource("1_rlb8o")
+TileSetGraphicsIndex = Vector2i(0, 0)

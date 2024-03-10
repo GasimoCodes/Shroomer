@@ -22,17 +22,28 @@ public partial class StatsListener : Node
 
 		PlayerStats.Instance.Energy.OnValueChanged += (value) =>
 		{
-			energyLabel.Text = "Energy: " + value;
+			energyLabel.Text = "Energy: " + value + "/" + PlayerStats.Instance.Energy.MaxValue;
 		};
 
 		PlayerStats.Instance.Water.OnValueChanged += (value) =>
 		{
-			WaterLabel.Text = "Water: " + value;
+			WaterLabel.Text = "Water: " + value + "/" + PlayerStats.Instance.Water.MaxValue;
+
+			// Make the label red if water is low relative to maxValue
+			if (value < PlayerStats.Instance.Water.MaxValue / 4)
+			{
+				WaterLabel.Modulate = new Color(1, 0, 0);
+			}
+			else
+			{
+				WaterLabel.Modulate = new Color(1, 1, 1);
+			}
+
 		};
 
 		PlayerStats.Instance.Humidity.OnValueChanged += (value) =>
 		{
-			HumidityLabel.Text = "Humidity: " + value;
+			HumidityLabel.Text = "Humidity: " + value + "/" + PlayerStats.Instance.Humidity.MaxValue;
 			HumidityBar.Value = value;
 		};
 

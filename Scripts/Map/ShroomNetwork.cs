@@ -7,10 +7,25 @@ using System.Collections.Generic;
 /// </summary>
 public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 {
-	/// <summary>
-	/// List of shrooms on the map
-	/// </summary>
-	public Dictionary<Vector2I,ShroomBase> shrooms = new();
+	Timer timer;
+    public override void _Ready()
+    {
+        base._Ready();
+
+		// Invoke repeat on the Tick() method
+		timer = new Timer();
+		AddChild(timer);
+		timer.Timeout += DoTick;
+		timer.OneShot = false; 
+		timer.Start();
+		timer.Autostart = true;
+		
+    }
+
+    /// <summary>
+    /// List of shrooms on the map
+    /// </summary>
+    public Dictionary<Vector2I,ShroomBase> shrooms = new();
 
 	/// <summary>
 	/// Register a shroom to the network. Call this upon placing a new shroom from the MapBuilder

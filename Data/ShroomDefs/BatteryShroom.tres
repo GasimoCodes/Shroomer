@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShroomPowerContainer" load_steps=3 format=3 uid="uid://cy4dfrdhn26tt"]
+
+[ext_resource type="Texture2D" uid="uid://b1vjvtip43c6j" path="res://Art/Textures/TileSetShrooms/fin-0010.png" id="1_4olhl"]
+[ext_resource type="Script" path="res://Scripts/Map/Shrooms/ShroomPowerContainer.cs" id="1_d64b6"]
+
+[resource]
+script = ExtResource("1_d64b6")
+PowerCapacity = 100
+Health = 460
+MaxHealth = 255
+WaterCost = 110
+WaterCostPerTick = 10
+ShroomName = "Batteryshroom"
+ShroomDescription = "Increases maximum energy capacity"
+icon = ExtResource("1_4olhl")
+TileSetGraphicsIndex = Vector2i(0, 0)
+SpriteSourceIndex = 12

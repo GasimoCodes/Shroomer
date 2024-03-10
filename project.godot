@@ -13,6 +13,8 @@ config_version=5
 config/name="Shroomer"
 run/main_scene="res://Scenes/baseLevel.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://Art/Textures/GUI/icon.svg"
 
 [dotnet]
@@ -22,3 +24,4 @@ project/assembly_name="Shroomer"
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.145098, 0.282353, 0.572549, 1)

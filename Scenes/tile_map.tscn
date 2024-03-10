@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dvot0ojdexwnn"]
+[gd_scene load_steps=29 format=3 uid="uid://dvot0ojdexwnn"]
 
 [ext_resource type="Texture2D" uid="uid://bdpaw3vuqtke2" path="res://Art/Textures/TileSetShrooms/fin-0006.png" id="1_c25te"]
 [ext_resource type="Texture2D" uid="uid://kinmgud532hi" path="res://Art/Textures/TileSetGround/tile ground.png" id="2_enaq6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dkeikst628h3h" path="res://Art/Textures/TileSetGround/tile.png" id="3_gmp57"]
 [ext_resource type="Texture2D" uid="uid://dt5r5rxng61hs" path="res://Art/Textures/TileSetGround/ground 2.png" id="4_362df"]
 [ext_resource type="Texture2D" uid="uid://bmn4tcfwmr1xc" path="res://Art/Textures/TileSetShrooms/fin-0011.png" id="4_h6opb"]
+[ext_resource type="Texture2D" uid="uid://b1vjvtip43c6j" path="res://Art/Textures/TileSetShrooms/fin-0010.png" id="5_owcvp"]
 [ext_resource type="Texture2D" uid="uid://btatammyj6iuk" path="res://Art/Textures/TileSetShrooms/fin-0002.png" id="6_uh6g0"]
 [ext_resource type="Texture2D" uid="uid://dwov1ysedr3xc" path="res://Art/Textures/TileSetShrooms/fin-0001.png" id="7_sttfi"]
 [ext_resource type="Texture2D" uid="uid://d3p632hwqrf1" path="res://Art/Textures/TileSetShrooms/fin-0003.png" id="7_t80go"]
@@ -43,6 +44,13 @@ texture = ExtResource("4_h6opb")
 texture_region_size = Vector2i(256, 128)
 0:1/size_in_atlas = Vector2i(1, 3)
 0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohiie"]
+texture = ExtResource("5_owcvp")
+texture_region_size = Vector2i(256, 128)
+0:0/size_in_atlas = Vector2i(1, 4)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 88)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1eiu"]
 texture = ExtResource("3_fe2uf")
@@ -114,6 +122,7 @@ sources/7 = SubResource("TileSetAtlasSource_faye0")
 sources/9 = SubResource("TileSetAtlasSource_n3cni")
 sources/10 = SubResource("TileSetAtlasSource_dylv8")
 sources/11 = SubResource("TileSetAtlasSource_k7t6o")
+sources/12 = SubResource("TileSetAtlasSource_ohiie")
 
 [node name="TileMap" type="TileMap"]
 y_sort_enabled = true

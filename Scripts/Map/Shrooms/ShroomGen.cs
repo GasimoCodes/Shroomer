@@ -21,7 +21,7 @@ public partial class ShroomGen : ShroomBase
 	{
 		base.DoTick();
 
-		if (PlayerStats.Instance.Water.Value < 1)
+		if (PlayerStats.Instance.Water.Value > 1)
 		{
 			// Generate power
 			PlayerStats.Instance.Energy.Value += PowerGenerationPerTick;

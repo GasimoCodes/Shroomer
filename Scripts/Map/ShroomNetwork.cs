@@ -75,6 +75,12 @@ public partial class ShroomNetwork : NodeSingleton<ShroomNetwork>
 		foreach (ShroomBase shroom in shrooms.Values){
 			shroom.DoTick();
 		}
+
+		if(PlayerStats.instance.Water.Value < 10)
+		{
+			PlayerStats.instance.Water.Value += 1;
+		}
+		
 	}
 
 }

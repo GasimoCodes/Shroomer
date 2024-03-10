@@ -18,4 +18,19 @@ public partial class MainMenu : Node
 	{
 		GetTree().ChangeSceneToFile("res://Scenes/baseLevel.tscn");
 	}
+
+	public void QuitGame()
+	{
+		GetTree().Quit();
+	}
+
+	public void ShowCredits()
+	{
+		GetNode<Control>("Credits").Visible = true;
+	}
+
+	public void HideCredits()
+	{
+		GetNode<Control>("Credits").Visible = false;
+	}
 }

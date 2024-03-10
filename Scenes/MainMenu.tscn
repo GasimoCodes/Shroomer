@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx5fakv63a2mc"]
+[gd_scene load_steps=6 format=3 uid="uid://bx5fakv63a2mc"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/MainMenu/MainMenu.cs" id="1_ot64x"]
 [ext_resource type="Texture2D" uid="uid://b7nfi6j200pat" path="res://Art/Textures/shroom building.png" id="1_tu82l"]
 [ext_resource type="AudioStream" uid="uid://cmheeof0m54mo" path="res://Art/Audio/Music/726481__timouse__piano-loop-sparkle-toy-xylophone_ubiquitous-arp_automated-freq-res-decay.wav" id="3_njpjk"]
+[ext_resource type="Texture2D" uid="uid://dlb258eouoc4f" path="res://Art/Textures/GUI/image2.png" id="3_o24bh"]
+[ext_resource type="Texture2D" uid="uid://b2wb5pvm6xsyn" path="res://Art/Textures/GUI/image.png" id="4_eoyla"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,15 +43,10 @@ custom_minimum_size = Vector2(0, 44.505)
 layout_mode = 2
 text = "Grow"
 
-[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 44.505)
-layout_mode = 2
-text = "Itch.io Page"
-
 [node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44.505)
 layout_mode = 2
-text = "Bonuses"
+text = "Bonuses/Attribution"
 
 [node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44.505)
@@ -71,6 +68,68 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 96
 text = "Fungoria"
 
+[node name="Credits" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Credits/VBoxContainer2"]
+layout_mode = 2
+text = "Game made by:
+Gasimo
+Barbo
+LostSoul
+Laura Amálie Clowezov
+
+Music from CC4 sources:
+- timouse https://freesound.org/people/timouse/sounds/726481/
+- betabeats https://freesound.org/people/betabeats./sounds/650965/"
+fit_content = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Credits/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Credits/VBoxContainer2/ScrollContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Credits/VBoxContainer2/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(173.955, 0)
+layout_mode = 2
+texture = ExtResource("3_o24bh")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Credits/VBoxContainer2/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(173.955, 0)
+layout_mode = 2
+texture = ExtResource("4_eoyla")
+stretch_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Credits"]
+custom_minimum_size = Vector2(0, 8.805)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return"
+
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioListener2D"]
@@ -80,3 +139,7 @@ autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer" method="LoadGame"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button4" to="CanvasLayer" method="ShowCredits"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button3" to="CanvasLayer" method="ShowCredits"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button3" to="CanvasLayer" method="QuitGame"]
+[connection signal="pressed" from="CanvasLayer/Credits/Button" to="CanvasLayer" method="HideCredits"]

@@ -19,8 +19,13 @@ public abstract partial class ShroomBase : Resource, IDamageable, IBuildable
 	[Export]
 	public int WaterCost;
 
+
 	[Export]
 	public int WaterCostPerTick = 1;
+
+	
+	[Export]
+	public int PowerCostPerTick = 0;
 
 	[Export]
 	public string ShroomName;
@@ -89,6 +94,12 @@ public abstract partial class ShroomBase : Resource, IDamageable, IBuildable
 			DoHeal(1);
 			PlayerStats.Instance.Water.Value -= WaterCostPerTick;
 		}
+
+		if (PlayerStats.Instance.Energy.Value > PowerCostPerTick)
+		{
+			PlayerStats.Instance.Energy.Value -= PowerCostPerTick;
+		}
+
 	}
 
 	public virtual void OnDestroy()

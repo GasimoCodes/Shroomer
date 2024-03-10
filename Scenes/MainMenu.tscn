@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx5fakv63a2mc"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/MainMenu/MainMenu.cs" id="1_ot64x"]
+[ext_resource type="Texture2D" uid="uid://b7nfi6j200pat" path="res://Art/Textures/shroom building.png" id="1_tu82l"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_ot64x")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tu82l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -47.0
+offset_right = 182.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 44.505)
+layout_mode = 2
+text = "Grow"
+
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 44.505)
+layout_mode = 2
+text = "Itch.io Page"
+
+[node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 44.505)
+layout_mode = 2
+text = "Bonuses"
+
+[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 44.505)
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.5
+offset_top = -198.0
+offset_right = 204.5
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 96
+text = "Fungoria"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer" method="LoadGame"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer" method="_on_button_pressed"]

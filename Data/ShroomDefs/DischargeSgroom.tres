@@ -14,5 +14,5 @@ PowerCostPerTick = 2
 ShroomName = "Disrcharge Fungi"
 ShroomDescription = "Stores a small amount of energy but discharges it when threatened."
 icon = ExtResource("1_4t7n4")
-TileSetGraphicsIndex = Vector2i(0, 0)
+TileSetGraphicsIndex = Vector2i(0, 1)
 SpriteSourceIndex = 13

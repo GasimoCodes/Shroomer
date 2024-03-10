@@ -35,6 +35,11 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 	/// <param name="shroomBase"></param>
 	public void EnableBuildMode(ShroomBase shroomBase)
 	{
+		if (previewSpawner != null)
+		{
+			return;
+		}
+
 		destroy = false;
 
 		// Create new Sprite2D for the preview
@@ -45,7 +50,7 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 			ZIndex = 1
 		};
 
-		buildShroom = (ShroomBase)shroomBase.Duplicate();
+		buildShroom = shroomBase;
 
 		AddChild(previewSpawner);
 	}
@@ -54,6 +59,12 @@ public partial class MapBuilder : NodeSingleton<MapBuilder>
 	public void DisableBuildMode()
 	{
 		// Remove the preview
+
+		if (previewSpawner == null)
+		{
+			return;
+		}
+
 		previewSpawner.QueueFree();
 		previewSpawner = null;
 	}
